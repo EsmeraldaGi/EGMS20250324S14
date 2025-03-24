@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EGMS20250324S14.AppWebMVC.Models;
 
 public partial class Cliente
 {
     public int Id { get; set; }
-
+    [Required(ErrorMessage ="El nombre es obligatorio")]
+   
     public string Nombre { get; set; } = null!;
 
+    [Display(Name ="Dirección")]
     public string? Direccion { get; set; }
 
+    [Display(Name ="Teléfono")]
     public string? Telefono { get; set; }
 
-    public string? Email { get; set; }
+    [Required(ErrorMessage = "El email es obligatorio")]
+    [Display(Name = "Email")]
+    public string? Email { get; set; } = null!;
 }
